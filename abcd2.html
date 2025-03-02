@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mithila Das Esha - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            color: #333;
+        }
+
+        /* Header Section */
+        header {
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: white;
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 10rem 2rem 6rem;
+            text-align: center;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: white;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: slideIn 1.5s ease-in-out;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            animation: slideIn 2s ease-in-out;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        /* About Section */
+        .about {
+            padding: 6rem 2rem;
+            display: flex;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            align-items: center;
+        }
+
+        .profile-img {
+            width: 300px;
+            border-radius: 50%;
+            border: 5px solid #6a11cb;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .bio {
+            flex: 1;
+            line-height: 1.6;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .bio h2 {
+            color: #6a11cb;
+            margin-bottom: 1rem;
+        }
+
+        /* Skills Section */
+        .skills {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, #2575fc, #6a11cb);
+            color: white;
+            clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+        }
+
+        .skills h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+        }
+
+        .skills-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Projects Section */
+        .projects {
+            padding: 6rem 2rem;
+            background: white;
+        }
+
+        .projects h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            color: #6a11cb;
+        }
+
+        .projects-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .project-card h3 {
+            color: #2575fc;
+            margin-bottom: 1rem;
+        }
+
+        /* Resume Section */
+        .resume {
+            text-align: center;
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: white;
+            clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 100%);
+        }
+
+        .resume h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .resume-btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: white;
+            color: #6a11cb;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 1rem;
+            font-weight: bold;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .resume-btn:hover {
+            background: #6a11cb;
+            color: white;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 6rem 2rem;
+            text-align: center;
+            background: white;
+        }
+
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #6a11cb;
+        }
+
+        .contact p {
+            margin-bottom: 0.5rem;
+        }
+
+        .contact a {
+            color: #2575fc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact a:hover {
+            color: #6a11cb;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">MDE</div>
+            <div>Portfolio</div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Mithila Das Esha</h1>
+        <p>Software Developer | Machine Learning Enthusiast | Data Visualization Expert</p>
+    </section>
+
+    <section class="about">
+        <img src="pro_img.jpg" alt="Profile" class="profile-img">
+        <div class="bio">
+            <h2>About Me</h2>
+            <p>Detail-oriented software developer with experience in frontend development, machine learning, and data visualization. Adept at creating intuitive user interfaces and building machine learning models to drive intelligent solutions. Skilled in Python, SQL, and modern web frameworks, with a proven track record of delivering robust, user-friendly applications and systems.</p>
+        </div>
+    </section>
+
+    <section class="skills">
+        <h2>Technical Skills</h2>
+        <div class="skills-container">
+            <div class="skill-card">Frontend Development</div>
+            <div class="skill-card">Machine Learning & Deep Learning</div>
+            <div class="skill-card">Data Visualization</div>
+            <div class="skill-card">SQL Querying</div>
+            <div class="skill-card">Python</div>
+            <div class="skill-card">Data Management</div>
+        </div>
+    </section>
+
+    <section class="projects">
+        <h2>Featured Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3>Flipkart Review Sentiment Analysis</h3>
+                <p>Tools and Tech used: Python libraries, NLTK, Seaborn, Matplotlib</p>
+            </div>
+            <div class="project-card">
+                <h3>Semantic Segmentation of Images</h3>
+                <p>Tools and Tech used: Python, TensorFlow, OpenCV, U-Net</p>
+            </div>
+            <div class="project-card">
+                <h3>IoT Based Mask and Temperature Scan Entry System</h3>
+                <p>Research project published in a journal</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="resume">
+        <h2>Download My Resume</h2>
+        <a href="MDE resume new.pdf" class="resume-btn" download>Download PDF</a>
+    </section>
+
+    <section class="contact">
+        <h2>Contact Me</h2>
+        <p>Email: mithiladasesha@gmail.com</p>
+        <p>Phone: +91 8918383733</p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/mithila-das-esha-273429231/">linkedin.com/in/mithila-das-esha</a></p>
+        <p>GitHub: <a href="https://github.com/mithiladas">github.com/mithiladas</a></p>
+    </section>
+
+    <footer>
+        <p>© 2023 Mithila Das Esha. All rights reserved.</p>
+    </footer>
+</body>
+</html>
